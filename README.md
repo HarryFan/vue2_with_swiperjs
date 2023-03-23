@@ -20,7 +20,6 @@
 運行 `npm run build` 以生成生產版本。生成的檔案將位於 `dist` 文件夾中。
 
 ## 目錄結構
-
 .
 ├── README.md
 ├── babel.config.js
