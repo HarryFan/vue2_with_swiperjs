@@ -19,23 +19,6 @@
 
 運行 `npm run build` 以生成生產版本。生成的檔案將位於 `dist` 文件夾中。
 
-## 目錄結構
-.
-├── README.md
-├── babel.config.js
-├── package.json
-├── public
-│ ├── favicon.ico
-│ └── index.html
-└── src
-├── App.vue
-├── assets
-│ └── logo.png
-├── components
-│ └── MySwiper.vue
-├── main.js
-└── plugins
-└── vue-awesome-swiper.js
 ## 相關資源
 
 - Vue.js 官方網站：https://vuejs.org/
