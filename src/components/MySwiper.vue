@@ -1,70 +1,68 @@
 <template>
   <div class="swiper-container">
-    <swiper
-      class="swiper-wrapper"
-      :options="swiperOption"
-      @slideChange="onSlideChange"
-      ref="mySwiper"
-    >
-    <swiper-slide>
-        <img src="https://picsum.photos/id/100/900/600" alt="Image 1" />
+    <p>
+      這段程式碼將會在網頁上顯示一個輪播圖，其中可以透過分頁器或是導航器切換圖片。
+    </p>
+    <p>
+      在這個範例中，有三張圖片，並且設定了循環播放（loop: true）。當 Slide 改變時，會觸發 onSlideChange 事件，並在 Console 中顯示當前的 Slide 編號。
+    </p>
+    <!-- 容器 -->
+    <swiper class="swiper-wrapper" :options="swiperOption" @slideChange="onSlideChange" ref="mySwiper">
+      <!-- 輪播的各個 Slide -->
+      <swiper-slide>
+        <img src="https://picsum.photos/id/100/900/600" alt="圖片 1" />
       </swiper-slide>
       <swiper-slide>
-        <img src="https://picsum.photos/id/101/900/600" alt="Image 2" />
+        <img src="https://picsum.photos/id/101/900/600" alt="圖片 2" />
       </swiper-slide>
       <swiper-slide>
-        <img src="https://picsum.photos/id/102/900/600" alt="Image 3" />
+        <img src="https://picsum.photos/id/102/900/600" alt="圖片 3" />
       </swiper-slide>
+      <!-- 如果需要，可以再加入更多的 Slide -->
 
-      <!-- Add more slides if needed -->
-
-      <!-- Swiper pagination -->
+      <!-- 輪播的分頁器 -->
       <div class="swiper-pagination" slot="pagination"></div>
 
-      <!-- Swiper navigation -->
+      <!-- 輪播的導航器 -->
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
+
   </div>
 </template>
-這將使每個輪播圖像使用不同的 Picsum 圖像
-
-
-
-
-
 <script>
-// import Swiper JS
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/css/swiper.min.css';
+  // 引入 Swiper JS
+  import VueAwesomeSwiper from 'vue-awesome-swiper';
+  import 'swiper/css/swiper.min.css';
 
-
-export default {
-  name: 'MySwiper',
-  components: {
-    swiper: VueAwesomeSwiper.swiper,
-    swiperSlide: VueAwesomeSwiper.swiperSlide
-  },
-  data() {
-    return {
-      swiperOption: {
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-    };
-  },
-  methods: {
-    onSlideChange() {
-      console.log('Current slide:', this.$refs.mySwiper.swiper.realIndex);
+  export default {
+    name: 'MySwiper',
+    components: {
+      swiper: VueAwesomeSwiper.swiper,
+      swiperSlide: VueAwesomeSwiper.swiperSlide
     },
-  },
-};
+    data() {
+      return {
+        swiperOption: {
+          // 輪播的選項
+          loop: true, // 循環播放
+          pagination: {
+            el: '.swiper-pagination', // 分頁器的 class 名稱
+          },
+          navigation: {
+            nextEl: '.swiper-button-next', // 下一張按鈕的 class 名稱
+            prevEl: '.swiper-button-prev', // 上一張按鈕的 class 名稱
+          },
+        },
+      };
+    },
+    methods: {
+      onSlideChange() {
+        // 當 Slide 改變時的事件處理器
+        console.log('當前 Slide:', this.$refs.mySwiper.swiper.realIndex);
+      },
+    },
+  };
 </script>
 
 <style>
